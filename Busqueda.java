@@ -72,7 +72,7 @@ public class Busqueda {
 
             //Obtener los que se repiten más veces en orden descendente
             for(var i=0;i<5;i++){
-                Enumeration e = contenedor.keys();
+                var e = contenedor.keys();
                 var clave="";
                 var palabra="";
                 while( e.hasMoreElements() ) {
