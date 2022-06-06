@@ -94,7 +94,7 @@ public class Busqueda {
 
     public <T> void imprimirTopRelevantes(ArrayList<T> arr, T opcion){
         if (arr.size()==0){
-            System.out.println("No sucedió ningún hecho relevante con la opción ingresada");
+            System.out.println("No sucedió ningún hecho relevante con la opción ingresada.");
         }else{
             if(opcion.equals("a")){
                 for (var i=0;i<3;i++){
@@ -129,12 +129,20 @@ public class Busqueda {
             case "a":
                 System.out.print("Ingrese el número a buscar: ");
                 var numUsuario = input.nextLine();
-                datosArchivo.imprimirTopRelevantes(datosArchivo.masRelevantes(datos, numUsuario.charAt(0), "a"), "a");
+                if(numUsuario.equals("") || numUsuario.equals(" ")){
+                    System.out.println("Error, ingrese un valor válido.");
+                }else{
+                    datosArchivo.imprimirTopRelevantes(datosArchivo.masRelevantes(datos, numUsuario, "a"), "a");
+                }
                 break;
             case "b":
                 System.out.print("Ingrese la palabra a buscar: ");
                 var palabraUsuario = input.nextLine();
-                datosArchivo.imprimirTopRelevantes(datosArchivo.masRelevantes(datos, palabraUsuario, "b"), "b");
+                if(palabraUsuario.equals("") || palabraUsuario.equals(" ")){
+                    System.out.println("Error, ingrese una palabra válida.");
+                }else{
+                    datosArchivo.imprimirTopRelevantes(datosArchivo.masRelevantes(datos, palabraUsuario, "b"), "b");
+                }
                 break;
             case "c":
                 break;
